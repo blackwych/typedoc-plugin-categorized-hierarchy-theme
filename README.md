@@ -14,11 +14,11 @@ This plugin provides:
 
 Recommended for npm 5+
 ```
-npx install-peerdeps --dev typedoc-plugin-categorized-hierarchy-theme
+npx install-peerdeps --dev @blackwych/typedoc-plugin-categorized-hierarchy-theme
 ```
 otherwise
 ```
-npm install -D typedoc-plugin-categorized-hierarchy-theme
+npm install -D @blackwych/typedoc-plugin-categorized-hierarchy-theme
 ```
 
 
