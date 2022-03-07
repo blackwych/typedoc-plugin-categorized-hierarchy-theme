@@ -1,6 +1,6 @@
 {
   "name": "@blackwych/typedoc-plugin-categorized-hierarchy-theme",
-  "version": "0.1.0-alpha",
+  "version": "1.0.0",
   "description": "TypeDoc plugin to use hierarchical navigation menu with the default theme",
   "main": "dist/index.js",
   "scripts": {
