@@ -1,0 +1,111 @@
+/* color definition */
+
+:root {
+  /* override */
+  --dark-color-menu-label: #c0c0c0;
+
+  /* new */
+  --light-color-menu-active-label: #000;
+  --dark-color-menu-active-label: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  --color-menu-active-label: --light-color-menu-active-label;
+}
+
+@media (prefers-color-scheme: dark) {
+  --color-menu-active-label: --dark-color-menu-active-label;
+}
+
+
+/* reset */
+
+.tsd-navigation {
+  margin-left: 0;
+}
+
+.tsd-navigation.primary li {
+  border: none;
+}
+
+.tsd-navigation.primary ul li a {
+  color: unset;
+  padding-left: 0;
+}
+
+
+/* custom styles */
+
+.col-menu {
+  overflow: auto;
+}
+
+.tsd-navigation.primary ul ul ul {
+  margin-left: 20px;
+}
+
+.tsd-navigation.primary li.project > .menu-label {
+  border-bottom: 1px solid var(--color-panel-divider);
+}
+
+.tsd-navigation.primary li.category > .menu-label {
+  border-bottom: 1px solid var(--color-panel-divider);
+  margin-bottom: 3px;
+  margin-top: 12px;
+  padding-top: 3px;
+}
+
+.tsd-navigation.primary li::before {
+  display: inline-block;
+  float: left;
+  height: 17px;
+  margin: 3px 0 3px -14px;
+  width: 17px;
+}
+
+.tsd-navigation.primary li.has-children::before {
+  cursor: pointer;
+  content: "⊞";
+}
+
+.tsd-navigation.primary li.has-children.open::before {
+  content: "⊟";
+}
+
+.tsd-navigation.primary li.has-children > ul {
+  display: none;
+}
+
+.tsd-navigation.primary li.has-children.open > ul {
+  display: block;
+}
+
+.tsd-navigation.primary li > .menu-label {
+  color: var(--color-menu-label);
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+
+.tsd-navigation.primary li.project > .menu-label,
+.tsd-navigation.primary li.category > .menu-label,
+.tsd-navigation.primary li.current > .menu-label {
+  font-weight: bold;
+}
+
+.tsd-navigation.primary li.current > .menu-label,
+.tsd-navigation.primary li.in-page > .menu-label {
+  color: var(--color-menu-active-label);
+}
+
+.tsd-navigation.primary .tsd-kind-icon {
+  padding-left: 24px !important;
+}
+
+.tsd-custom-kind-module-dir {
+  cursor: pointer;
+}
+
+.tsd-custom-kind-module-dir > .tsd-kind-icon::before {
+  background-image: url(./folder.svg);
+  background-size: 17px 17px;
+}
