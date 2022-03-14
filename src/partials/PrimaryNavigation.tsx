@@ -116,32 +116,33 @@ const TreeView = ({
 
 type PrimaryNavigationProps = {
   context: RenderContext,
-  /** model of a target page */
   model: Reflection,
+  projectHasModule: boolean,
 };
 
 /** Tree view of categories and modules */
-const PrimaryNavigation = ({ context, model }: PrimaryNavigationProps): JSX.Element => {
-  const modules = model.project.getChildrenByKind(ReflectionKind.SomeModule);
-  const projectLinkName = modules.some((m) => m.kindOf(ReflectionKind.Module)) ? 'Modules' : 'Exports';
-
-  return (
-    <nav class="tsd-navigation primary">
-      <ul>
-        <li class={clsx('project', { current: model.isProject() })}>
-          <a class="menu-label" href={context.urlTo(model.project)}>{projectLinkName}</a>
+const PrimaryNavigation = ({
+  context,
+  model,
+  projectHasModule,
+}: PrimaryNavigationProps): JSX.Element => (
+  <nav class="tsd-navigation primary">
+    <ul>
+      <li class={clsx('project', { current: model.isProject() })}>
+        <a class="menu-label" href={context.urlTo(model.project)}>{projectHasModule ? 'Modules' : 'Exports'}</a>
+        {model.project.categories && (
           <ul>
-            {(model.project.categories || []).map((category) => (
+            {model.project.categories.map((category) => (
               <li class={clsx('category', { current: isPageInCategory(model, category) })}>
                 <div class="menu-label">{category.title}</div>
                 <TreeView tree={toTree(category.children)} {...{ context, model }} />
               </li>
             ))}
           </ul>
-        </li>
-      </ul>
-    </nav>
-  );
-};
+        )}
+      </li>
+    </ul>
+  </nav>
+);
 
 export default PrimaryNavigation;
