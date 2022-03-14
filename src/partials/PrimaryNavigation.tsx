@@ -1,13 +1,12 @@
 import clsx from 'clsx';
 import {
   DeclarationReflection,
+  DefaultThemeRenderContext,
   JSX,
   Reflection,
   ReflectionCategory,
   ReflectionKind,
 } from 'typedoc';
-
-import RenderContext from '../RenderContext';
 
 type ModelTree = { [name: string]: { node?: DeclarationReflection, children: ModelTree } };
 
@@ -72,7 +71,7 @@ type TreeViewProps = {
   root?: string,
   /** tree data */
   tree: ModelTree,
-  context: RenderContext,
+  context: DefaultThemeRenderContext,
   /** model of a target page */
   model: Reflection,
 };
@@ -115,7 +114,7 @@ const TreeView = ({
 );
 
 type PrimaryNavigationProps = {
-  context: RenderContext,
+  context: DefaultThemeRenderContext,
   model: Reflection,
   projectHasModule: boolean,
 };

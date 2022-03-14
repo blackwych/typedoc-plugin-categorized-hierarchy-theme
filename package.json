@@ -7,7 +7,7 @@
     "build": "tsc",
     "lint": "tsc --noEmit && eslint --cache src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepack": "npm run lint && npm run build"
+    "prepack": "rm -rf dist && npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
