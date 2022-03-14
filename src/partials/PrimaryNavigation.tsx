@@ -41,8 +41,14 @@ const isPageInPath = (
 ) => {
   let m: Reflection | undefined;
   for (m = page; m && !m.isProject(); m = m.parent) {
-    if (m === node) return true;
-    if (m.kindOf(ReflectionKind.Module) && `/${m.name}`.startsWith(path)) return true;
+    if (m === node) {
+      return true;
+    }
+
+    const p = `/${m.name}`;
+    if (m.kindOf(ReflectionKind.Module) && (p === path || p.startsWith(`${path}/`))) {
+      return true;
+    }
   }
   return false;
 };
