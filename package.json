@@ -20,27 +20,22 @@
   ],
   "author": "blackwych",
   "license": "MIT",
-  "peerDependencies": {
-    "typedoc": "^0.22.8"
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "fs-extra": "^10.0.1",
+    "typedoc": "^0.22.13"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^16.1.0",
-    "eslint-plugin-import": "^2.25.4",
-    "typedoc": "^0.22.8"
+    "eslint-plugin-import": "^2.25.4"
   },
   "bugs": {
     "url": "https://github.com/blackwych/typedoc-plugin-categorized-hierarchy-theme/issues"
   },
-  "homepage": "https://github.com/blackwych/typedoc-plugin-categorized-hierarchy-theme#readme",
-  "dependencies": {
-    "clsx": "^1.1.1",
-    "fs-extra": "^10.0.1",
-    "node": "^17.5.0"
-  }
+  "homepage": "https://github.com/blackwych/typedoc-plugin-categorized-hierarchy-theme#readme"
 }
