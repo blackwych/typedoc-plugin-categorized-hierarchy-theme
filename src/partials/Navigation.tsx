@@ -1,14 +1,14 @@
 import {
+  DefaultThemeRenderContext,
   JSX,
   Reflection,
   ReflectionKind,
 } from 'typedoc';
 
-import RenderContext from '../RenderContext';
 import PrimaryNavigation from './PrimaryNavigation';
 
 type NavigationProps = {
-  context: RenderContext,
+  context: DefaultThemeRenderContext,
   model: Reflection,
   original: JSX.Element,
 };

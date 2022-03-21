@@ -1,12 +1,7 @@
-import {
-  JSX,
-  Reflection,
-} from 'typedoc';
-
-import RenderContext from '../RenderContext';
+import { DefaultThemeRenderContext, JSX, Reflection } from 'typedoc';
 
 type BreadcrumbProps = {
-  context: RenderContext,
+  context: DefaultThemeRenderContext,
   model?: Reflection,
 };
 
